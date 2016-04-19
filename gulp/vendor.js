@@ -4,7 +4,9 @@ var gnf = require('gulp-npm-files');
 
 module.exports = function(options) {
     var vendorFiles = [
-        'node_modules/jquery/dist/jquery.min.js'
+        'node_modules/jquery/dist/jquery.min.js',
+        'assets/vendorjs/jquery.parallax.js',
+        'node_modules/gsap/src/uncompressed/TweenMax.js'
     ];
     // Copy dependencies to build/node_modules/ 
     gulp.task('copyNpmDependenciesOnly', function() {

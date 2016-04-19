@@ -4,6 +4,7 @@
   "description": "Interactive creepy stories",
   "main": "Gulpfile.js",
   "dependencies": {
+    "gsap": "^1.18.2",
     "jquery": "^2.2.3"
   },
   "devDependencies": {
