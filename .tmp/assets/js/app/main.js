@@ -139,7 +139,7 @@ function fadeInNext() {
         .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 1}, '-=0.5')
         .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 1}, '-=0.25');
     
-    TweenMax.delayedCall(1, startParallax);
+    TweenMax.delayedCall(0.1, startParallax);
 }
 
 $('.next-slide').on('click', function() {

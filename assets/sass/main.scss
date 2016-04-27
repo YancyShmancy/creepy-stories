@@ -1,61 +1,198 @@
+@import "partials/variables";
+@import "partials/slides";
+
 body,
 html {
     margin: 0;
     padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .wrapper {
     position: relative;
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
-section.slide {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+header {
     float: left;
-    display: none;
+    height: 100px;
+    width: 100%;
+    background-color: white;
     
-    &.current {
-        display: block;
+    .menu-container {
+        float: left;
+        width: 50%;
+        height: 100%;
+        
+        .triangle {
+            width: 140px;
+            height: 130px;
+            float: left;
+        }
+        
+        img {
+            float: left;
+            padding-top: 15px;
+            height: 72px;
+            width: auto;
+        }
     }
     
-    a.next-slide {
-        background: black;
-        position: absolute;
-        left: 100px;
-        top: 100px;
-        color: #fff;
+    .search-container {
+        float: right;
+        width: 330px;
+        height: 100%;
+        font-family: 'Vollkorn';
+        padding: 0 20px 0 0 ;
+        
+        p {
+            display: block;
+            margin-bottom: 0;
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+            height: 44px;
+        }
     }
 }
 
-#scene {
+#hero {
+    height: 400px;
     width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    float: left;
+    position: relative;
+    background: url(../img/scene1.png);
+    background-size: auto 400px;
+    background-position: bottom;
+    background-repeat: no-repeat;
     
-    li.layer {
-        height: 100%;
-        width: 100%;
-        opacity: 0;
+    .header-container {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+        padding: 20px 10px;
+        z-index: 3;
         
-        img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-100%) translateY(-100%);
+        h1 {
+            font-size: 72px;
+            color: $brown-red;
+            margin: 0;
+            font-family: 'Milonga';
         }
         
-        .title {
-            width: 100%;
-            text-align: center;
-            font-size: 4em;
+        a {
+            color: $dark-brown-red;
+            font-family: 'Montserrat';
+            text-decoration: none;
         }
     }
+    
+    .blur {
+        position: absolute;
+        bottom: 30px;
+        right: 20px;
+        height: 150px;
+        width: 750px;
+        background-color: rgba(255,255,255, 0.7);
+        z-index: 2;
+        -webkit-filter: blur(10px);
+    }
 }
+
+#stories {
+    position: relative;
+    width: 100%;
+    float: left;
+    height: auto;
+    
+    h2 {
+        float: left;
+        font-family: 'Milonga';
+        font-size: 2.5em;
+        margin: 30px 40px;
+    }
+    
+    
+    .selection {
+        height: 150px;
+        width: 100%;
+        float: left;
+        border-top: 5px solid $light-brown;
+        border-bottom: 5px solid $light-brown;
+        margin: 20px 0;
+        
+        &:nth-of-type(2) {
+            margin-bottom: 200px;
+        }
+    }
+    
+    .big-btn {
+        width: 450px;
+        height: 115px;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        margin-left: -225px;
+        background: url(../img/button1.png);
+        font-family: 'Vollkorn';
+        line-height: 115px;
+        text-align: center;
+        font-size: 36px;
+        text-decoration: none;
+        color: white;
+    }
+}
+
+footer {
+    float: left;
+    position: relative;
+    width: 100%;
+    background-color: $green-brown;
+    color: white;
+    padding: 20px 20px 0 20px;
+    
+    .footer-nav {
+        float: left;
+        list-style-type: none;
+        width: 70%;
+        text-align: center;
+        
+        li {
+            display: inline;
+            padding: 20px 10px;
+            
+            a {
+                font-size: 24px;
+                color: white;
+                text-decoration: none;
+                font-family: 'Vollkorn';
+            }
+        }
+    }
+    
+    img {
+        float: left;
+        width: 15%;
+        height: auto;
+        min-width: 200px;
+    }
+    
+    .copyright {
+        float: left;
+        width: 30%;
+        font-size: 14px;
+        font-family: 'Vollkorn';
+        margin-top: 50px;
+    }
+}
+
 
