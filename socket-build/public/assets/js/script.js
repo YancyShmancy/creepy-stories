@@ -1,12 +1,6 @@
 $(function() {
 
-	// Apply a CSS filter with our blur class (see our assets/css/styles.css)
-	
 	var blurredElements = $('.slide.current').addClass('blur');
-
-	// Initialize the Reveal.js library with the default config options
-	// See more here https://github.com/hakimel/reveal.js#configuration
-	// Connect to the socket
 
 	var socket = io();
 
@@ -59,7 +53,6 @@ $(function() {
 				// by sending the "slide-changed" message to socket.io
 
 				if(ignore){
-					// You will learn more about "ignore" in a bit
 					return;
 				}
 
@@ -77,7 +70,6 @@ $(function() {
 				// by sending the "slide-changed" message to socket.io
 
 				if(ignore){
-					// You will learn more about "ignore" in a bit
 					return;
 				}
 

@@ -1,14 +1,8 @@
-// This is the server-side file of our mobile remote controller app.
-// It initializes socket.io and a new express instance.
-// Start it by running 'node app.js' from your terminal.
-
 
 // Creating an express server
 
 var express = require('./public/node_modules/express/index'),
 	app = express();
-
-// This is needed if the app is run on heroku and other cloud providers:
 
 var port = process.env.PORT || 8080;
 
@@ -18,14 +12,11 @@ var port = process.env.PORT || 8080;
 var io = require('socket.io').listen(app.listen(port));
 
 
-// App Configuration
+// Configuration
 
-// Make the files in the public folder available to the world
 app.use(express.static(__dirname + '/public'));
 
-
-// This is a secret key that prevents others from opening your presentation
-// and controlling it. Change it to something that only you know.
+// Secret key
 
 var secret = 'kittens';
 
