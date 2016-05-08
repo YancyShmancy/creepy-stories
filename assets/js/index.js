@@ -6,28 +6,6 @@ var background = $('.background'),
     middlefg = $('.middleforeground'),
     foreground = $('.foreground');
 
-//var hanselAndGretel = {
-//    page1: {
-//        title: 'Kids In the Woods',
-//        content: 'Once upon a time there was blah blah blah blah blah',
-//        foreground: {
-//            // img + class for grid positioning
-//        },
-//        middleforeground: {
-//            // img + class for grid positioning
-//        },
-//        middleground: {
-//            // img + class for grid positioning
-//        },
-//        middlebackground: {
-//            // img + class for grid positioning
-//        },
-//        background: {
-//            // img + class for grid positioning
-//        }
-//    }
-//}
-
 function startParallax() {
     $('.current > #scene').parallax({
         calibrateX: false,
@@ -36,8 +14,8 @@ function startParallax() {
         invertY: true,
         limitX: false,
         limitY: false,
-        scalarX: 15,
-        scalarY: 20,
+        scalarX: 3,
+        scalarY: 3,
         originX: 0.5,
         originY: 0.5
     });
@@ -47,12 +25,16 @@ function fadeInStart() {
     currentCheck();
     startParallax();
     
+//    var mySplitText = new SplitText('.current .text', {type:"words,chars"});
+//    var chars = mySplitText.chars;
+    
     var tl = new TimelineLite();
     tl.to(currentSlide.foreground.el, currentSlide.foreground.fadeSpeed, {opacity: 1})
         .to(currentSlide.middleforeground.el, currentSlide.middleforeground.fadeSpeed, {opacity: 1}, '-=1')
         .to(currentSlide.middleground.el, currentSlide.middleground.fadeSpeed, {opacity: 1}, '-=0.75')
         .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 1}, '-=0.5')
-        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 1}, '-=0.25');
+        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 1}, '-=0.25')
+        .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 1, scale: 1, ease:Back.easeOut}, "-=0");
 }
 
 $(document).ready(function() {
@@ -99,34 +81,41 @@ function currentCheck() {
             class: 'layer background',
             dataDepth: '0.00',
             fadeSpeed: 0.5
+        },
+        text: {
+            el: $('.current .text'),
+            fadeSpeed: 1
         }
     }
 };
-
-
-
-/* Create a function that takes an object (i.e. hanselAndGretel above)
-and adds each layer to the innerHTML of the li layers */
-
-//function renderPage() {
-//    var page = $('.slide').attr('current-page');
-//    var story = $('.slide').attr('current-story');
-//    
-//    middlebg.empty();
-//    middlebg.append(story[page]title;
-//}
 
 function fadeOut() {
     var nextSlide = $('.current').next();
     var tl = new TimelineLite();
     tl.to(currentSlide.foreground.el, currentSlide.foreground.fadeSpeed, {opacity: 0})
+        .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 0}, '-=1.25')
         .to(currentSlide.middleforeground.el, currentSlide.middleforeground.fadeSpeed, {opacity: 0}, '-=1')
         .to(currentSlide.middleground.el, currentSlide.middleground.fadeSpeed, {opacity: 0}, '-=0.75')
         .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 0}, '-=0.5')
         .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 0}, '-=0.25')
         .to(currentSlide.el, 0.1, {className: "-=current"})
         .to(nextSlide, 0.1, {className: "+=current"});
-    
+        
+    TweenMax.delayedCall(3, fadeInNext);
+}
+
+function fadeOutToPrevious() {
+    var nextSlide = $('.current').prev();
+    var tl = new TimelineLite();
+    tl.to(currentSlide.foreground.el, currentSlide.foreground.fadeSpeed, {opacity: 0})
+        .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 0}, '-=1.25')
+        .to(currentSlide.middleforeground.el, currentSlide.middleforeground.fadeSpeed, {opacity: 0}, '-=1')
+        .to(currentSlide.middleground.el, currentSlide.middleground.fadeSpeed, {opacity: 0}, '-=0.75')
+        .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 0}, '-=0.5')
+        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 0}, '-=0.25')
+        .to(currentSlide.el, 0.1, {className: "-=current"})
+        .to(nextSlide, 0.1, {className: "+=current"});
+        
     TweenMax.delayedCall(3, fadeInNext);
 }
 
@@ -137,11 +126,16 @@ function fadeInNext() {
         .to(currentSlide.middleforeground.el, currentSlide.middleforeground.fadeSpeed, {opacity: 1}, '-=1')
         .to(currentSlide.middleground.el, currentSlide.middleground.fadeSpeed, {opacity: 1}, '-=0.75')
         .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 1}, '-=0.5')
-        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 1}, '-=0.25');
+        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 1}, '-=0.25')
+        .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 1, scale: 1, ease:Back.easeOut}, "-=0");
     
     TweenMax.delayedCall(0.1, startParallax);
 }
 
 $('.next-slide').on('click', function() {
     fadeOut();
+})
+
+$('.previous-slide').on('click', function() {
+    fadeOutToPrevious();
 })

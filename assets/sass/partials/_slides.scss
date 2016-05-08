@@ -1,39 +1,83 @@
 section.slide {
-    height: 100vh;
-    width: 100vw;
+    height: 700px;
+    width: 1000px;
     position: relative;
-    float: left;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -350px;
     display: none;
     
     &.current {
         display: block;
     }
     
-    a.next-slide {
+    a.next-slide,
+    a.previous-slide {
         background: black;
         position: absolute;
-        left: 100px;
-        top: 100px;
+        top: 50%;
+        height: 50px;
+        margin-top: -25px;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        text-decoration: none;
         color: #fff;
+        font-weight: 700;
+        
+        &:hover {
+            background: #444;
+        }
+    }
+    
+    a.next-slide {
+        left: 100%;
+    }
+    a.previous-slide {
+        right: 100%;
     }
 }
 
-#scene {
+.tree1.left {
+        left: -175px;
+        top: 0;
+        height: 110%;
+    }
+
+li.background img.full {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lightwash {
+    bottom: 0;
+    left: 0;
+    height: 50%;
+}
+
+ul#scene {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     
     li.layer {
         height: 100%;
         width: 100%;
         opacity: 0;
+        perspective: 120px;
+        transform-style:preserve-3d;
         
         img {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-100%) translateY(-100%);
         }
         
         .title {
@@ -42,4 +86,294 @@ section.slide {
             font-size: 4em;
         }
     }
+    
+    .text {
+        opacity: 0;
+        scale: 0;
+        position: absolute;
+        font-family: 'Milonga';
+    }
 }
+
+#one ul {  
+    
+    .tree2.left {
+        left: 50px;
+        top: 50px;
+        height: 100%;
+        
+        &.color {
+            top: 75px;
+            height: 80%;
+        }
+    }
+    
+    .tree3.left {
+        left: 100px;
+        top: 125px;
+        height: 60%;
+    }
+    
+    .tree4.right {
+        left: 650px;
+        top: 130px;
+        height: 70%;
+        
+        &.color {
+            top: 80px;
+            left: 530px;
+            height: 73%;
+        }
+    }
+    
+    .kids {
+        height: 10%;
+        top: 160px;
+        left: 550px;
+        
+        &.color {
+            height: 13%;
+            top: 130px;
+            left: 560px;
+        }
+    }
+    
+    
+    
+    .horizon {
+        top: 190px;
+        left: 450px;
+    }
+    
+    .crumbs4 {
+        top: 200px;
+        left: 600px;
+    }
+    
+    .crumbs3 {
+        left: 600px;
+        top: 275px;
+    }
+    
+    .crumbs2 {
+        left: 600px;
+        top: 350px;
+    }
+    
+    .crumbs1 {
+        left: 600px;
+        top: 450px;
+        
+        &.color {
+            top: 490px;
+        }
+    }
+    
+    .text {
+        width: 300px;
+        top: 400px;
+        left: 50%;
+        margin-left: -100px;
+        font-size: 1em;
+        
+        transform: rotateX(20deg) translateZ(50px);
+    }
+}
+
+#two ul { 
+    
+    .hill {
+        height: 75%;
+        top: 50px;
+        left: -75px;
+        
+        &.color {
+            top: 190px;
+            left: 220px;
+            height: 60%;
+        }
+    }
+    
+    .house {
+        height: 20%;
+        left: 830px;
+        top: 100px;
+        
+        &.color {
+            height: 77%;
+            left: 525px;
+        }
+    }
+    
+    .hansel {
+        top: 200px;
+        left: 400px;
+        
+        &.color {
+            left: 420px;
+        }
+    }
+    
+    .gretel {
+        top: 220px;
+        left: 350px;
+        
+        &.color {
+            top: 200px;
+            left: 310px;
+        }
+    }
+    
+    .tree {
+        
+        &.color {
+            left: 50px;
+            top: 50px;
+        }
+    }
+    
+    .leaves {
+        top: 250px;
+        left: 300px;
+    }
+    
+    .text {
+        width: 400px;
+        left: 600px;
+        top: 270px;
+        font-size: 2em;
+    }
+}
+
+#three ul {
+    
+    
+    .cageside {
+        top: 350px;
+        left: 200px;
+        
+        &.color {
+            left: 175px;
+        }
+    }
+    
+    .cagefront {
+        top: 370px;
+        left: 250px;
+    }
+    
+    .hansel {
+        top: 380px;
+        left: 280px;
+        
+        &.color {
+            top: 412px;
+            left: 280px;
+        }
+        
+    }
+    
+    .hanselarm {
+        top: 380px;
+        left: 330px;
+        
+        &.color {
+            top: 340px;
+            left: 290px;
+        }
+    }
+    
+    .witch {
+        top: 300px;
+        left: 450px;
+        
+        &.color {
+            top: 360px;
+            left: 520px;
+        }
+    }
+    
+    .houseleft {
+        top: 50px;
+        left: 600px;
+        height: 60%;
+        
+        &.color {
+            left: 340px;
+            top: -60px;
+            height: 90%;
+        }
+    }
+    
+    .houseright {
+        height: 70%;
+        top: 35px;
+        left: 820px;
+        
+        &.color {
+            height: 80%;
+            top: -20px;
+        }
+    }
+    
+    .text {
+        width: 500px;
+        font-size: 2em;
+        top: 70px;
+        left: 50%;
+        margin-left: -200px;
+        z-idex: 99999999;
+    }
+}
+
+#four ul {
+    .stove {
+        height: 40%;
+        top: 300px;
+        left: 600px;
+        
+        &.color {
+            height: 58%;
+            top: 250px;
+            left: 280px;
+        }
+    }
+    
+    .witch {
+        height: 35%;
+        top: 350px;
+        left: 400px;
+        
+        &.color {
+            height: 20%;
+            top: 430px;
+            left: 380px;
+        }
+    }
+    
+    .gretel {
+        height: 35%;
+        top: 350px;
+        left: 320px;
+        
+        &.color {
+            height: 25%;
+            top: 380px;
+        }
+    }
+    
+    .text {
+        width: 600px;
+        top: 20px;
+        left: 50%;
+        margin-left: -100px;
+        font-size: 2em;
+        padding-left: 20px;
+        
+        span {
+            margin-left: -50px;
+            display: block;
+        }
+    }
+}
+

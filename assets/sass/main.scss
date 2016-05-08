@@ -15,8 +15,8 @@ html {
     position: relative;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
 }
 
@@ -76,9 +76,6 @@ header {
     background-repeat: no-repeat;
     
     .header-container {
-        position: absolute;
-        bottom: 30px;
-        right: 20px;
         padding: 20px 10px;
         z-index: 3;
         
@@ -97,14 +94,18 @@ header {
     }
     
     .blur {
-        position: absolute;
-        bottom: 30px;
-        right: 20px;
         height: 150px;
         width: 750px;
         background-color: rgba(255,255,255, 0.7);
         z-index: 2;
         -webkit-filter: blur(10px);
+    }
+    
+    .header-container,
+    .blur {
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 }
 
