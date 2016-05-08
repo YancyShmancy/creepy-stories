@@ -1,0 +1,434 @@
+section.slide {
+  height: 700px;
+  width: 1000px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -350px;
+  display: none; }
+  section.slide.current {
+    display: block; }
+  section.slide a.next-slide,
+  section.slide a.previous-slide {
+    background: black;
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    margin-top: -25px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700; }
+    section.slide a.next-slide:hover,
+    section.slide a.previous-slide:hover {
+      background: #444; }
+  section.slide a.next-slide {
+    left: 100%; }
+  section.slide a.previous-slide {
+    right: 100%; }
+
+.tree1.left {
+  left: -175px;
+  top: 0;
+  height: 110%; }
+
+li.background img.full {
+  height: 100vh;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.lightwash {
+  bottom: 0;
+  left: 0;
+  height: 50%; }
+
+ul#scene {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  ul#scene li.layer {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    perspective: 120px;
+    transform-style: preserve-3d; }
+    ul#scene li.layer img {
+      position: absolute; }
+    ul#scene li.layer .title {
+      width: 100%;
+      text-align: center;
+      font-size: 4em; }
+  ul#scene .text {
+    opacity: 0;
+    scale: 0;
+    position: absolute;
+    font-family: 'Milonga'; }
+
+#one ul .tree2.left {
+  left: 50px;
+  top: 50px;
+  height: 100%; }
+  #one ul .tree2.left.color {
+    top: 75px;
+    height: 80%; }
+
+#one ul .tree3.left {
+  left: 100px;
+  top: 125px;
+  height: 60%; }
+
+#one ul .tree4.right {
+  left: 650px;
+  top: 130px;
+  height: 70%; }
+  #one ul .tree4.right.color {
+    top: 80px;
+    left: 530px;
+    height: 73%; }
+
+#one ul .kids {
+  height: 10%;
+  top: 160px;
+  left: 550px; }
+  #one ul .kids.color {
+    height: 13%;
+    top: 130px;
+    left: 560px; }
+
+#one ul .horizon {
+  top: 190px;
+  left: 450px; }
+
+#one ul .crumbs4 {
+  top: 200px;
+  left: 600px; }
+
+#one ul .crumbs3 {
+  left: 600px;
+  top: 275px; }
+
+#one ul .crumbs2 {
+  left: 600px;
+  top: 350px; }
+
+#one ul .crumbs1 {
+  left: 600px;
+  top: 450px; }
+  #one ul .crumbs1.color {
+    top: 490px; }
+
+#one ul .text {
+  width: 300px;
+  top: 400px;
+  left: 50%;
+  margin-left: -100px;
+  font-size: 1em;
+  transform: rotateX(20deg) translateZ(50px); }
+
+#two ul .hill {
+  height: 75%;
+  top: 50px;
+  left: -75px; }
+  #two ul .hill.color {
+    top: 190px;
+    left: 220px;
+    height: 60%; }
+
+#two ul .house {
+  height: 20%;
+  left: 830px;
+  top: 100px; }
+  #two ul .house.color {
+    height: 77%;
+    left: 525px; }
+
+#two ul .hansel {
+  top: 200px;
+  left: 400px; }
+  #two ul .hansel.color {
+    left: 420px; }
+
+#two ul .gretel {
+  top: 220px;
+  left: 350px; }
+  #two ul .gretel.color {
+    top: 200px;
+    left: 310px; }
+
+#two ul .tree.color {
+  left: 50px;
+  top: 50px; }
+
+#two ul .leaves {
+  top: 250px;
+  left: 300px; }
+
+#two ul .text {
+  width: 400px;
+  left: 600px;
+  top: 270px;
+  font-size: 2em; }
+
+#three ul .cageside {
+  top: 350px;
+  left: 200px; }
+  #three ul .cageside.color {
+    left: 175px; }
+
+#three ul .cagefront {
+  top: 370px;
+  left: 250px; }
+
+#three ul .hansel {
+  top: 380px;
+  left: 280px; }
+  #three ul .hansel.color {
+    top: 412px;
+    left: 280px; }
+
+#three ul .hanselarm {
+  top: 380px;
+  left: 330px; }
+  #three ul .hanselarm.color {
+    top: 340px;
+    left: 290px; }
+
+#three ul .witch {
+  top: 300px;
+  left: 450px; }
+  #three ul .witch.color {
+    top: 360px;
+    left: 520px; }
+
+#three ul .houseleft {
+  top: 50px;
+  left: 600px;
+  height: 60%; }
+  #three ul .houseleft.color {
+    left: 340px;
+    top: -60px;
+    height: 90%; }
+
+#three ul .houseright {
+  height: 70%;
+  top: 35px;
+  left: 820px; }
+  #three ul .houseright.color {
+    height: 80%;
+    top: -20px; }
+
+#three ul .text {
+  width: 500px;
+  font-size: 2em;
+  top: 70px;
+  left: 50%;
+  margin-left: -200px;
+  z-idex: 99999999; }
+
+#four ul .stove {
+  height: 40%;
+  top: 300px;
+  left: 600px; }
+  #four ul .stove.color {
+    height: 58%;
+    top: 250px;
+    left: 280px; }
+
+#four ul .witch {
+  height: 35%;
+  top: 350px;
+  left: 400px; }
+  #four ul .witch.color {
+    height: 20%;
+    top: 430px;
+    left: 380px; }
+
+#four ul .gretel {
+  height: 35%;
+  top: 350px;
+  left: 320px; }
+  #four ul .gretel.color {
+    height: 25%;
+    top: 380px; }
+
+#four ul .text {
+  width: 600px;
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+  font-size: 2em;
+  padding-left: 20px; }
+  #four ul .text span {
+    margin-left: -50px;
+    display: block; }
+
+@media screen and (max-width: 700px) {
+  section.slide {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    top: 0;
+    left: 0; }
+    section.slide #scene {
+      display: none; }
+    section.slide a.next-slide {
+      left: 60%; }
+    section.slide a.previous-slide {
+      right: 60%; } }
+
+body,
+html {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; }
+
+header {
+  float: left;
+  height: 100px;
+  width: 100%;
+  background-color: white; }
+  header .menu-container {
+    float: left;
+    width: 50%;
+    height: 100%; }
+    header .menu-container .triangle {
+      width: 140px;
+      height: 130px;
+      float: left; }
+    header .menu-container img {
+      float: left;
+      padding-top: 15px;
+      height: 72px;
+      width: auto; }
+  header .search-container {
+    float: right;
+    width: 330px;
+    height: 100%;
+    font-family: 'Vollkorn';
+    padding: 0 20px 0 0; }
+    header .search-container p {
+      display: block;
+      margin-bottom: 0; }
+    header .search-container input {
+      display: block;
+      width: 100%;
+      height: 44px; }
+
+#hero {
+  height: 400px;
+  width: 100%;
+  float: left;
+  position: relative;
+  background: url(../img/scene1.png);
+  background-size: auto 400px;
+  background-position: bottom;
+  background-repeat: no-repeat; }
+  #hero .header-container {
+    padding: 20px 10px;
+    z-index: 3; }
+    #hero .header-container h1 {
+      font-size: 72px;
+      color: #995d57;
+      margin: 0;
+      font-family: 'Milonga'; }
+    #hero .header-container a {
+      color: #5a3b4d;
+      font-family: 'Montserrat';
+      text-decoration: none; }
+  #hero .blur {
+    height: 150px;
+    width: 750px;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    -webkit-filter: blur(10px); }
+  #hero .header-container,
+  #hero .blur {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
+
+#stories {
+  position: relative;
+  width: 100%;
+  float: left;
+  height: auto; }
+  #stories h2 {
+    float: left;
+    font-family: 'Milonga';
+    font-size: 2.5em;
+    margin: 30px 40px; }
+  #stories .selection {
+    height: 150px;
+    width: 100%;
+    float: left;
+    border-top: 5px solid #d0c1a7;
+    border-bottom: 5px solid #d0c1a7;
+    margin: 20px 0; }
+    #stories .selection:nth-of-type(2) {
+      margin-bottom: 200px; }
+  #stories .big-btn {
+    width: 450px;
+    height: 115px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -225px;
+    background: url(../img/button1.png);
+    font-family: 'Vollkorn';
+    line-height: 115px;
+    text-align: center;
+    font-size: 36px;
+    text-decoration: none;
+    color: white; }
+
+footer {
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #8a8a6c;
+  color: white;
+  padding: 20px 20px 0 20px; }
+  footer .footer-nav {
+    float: left;
+    list-style-type: none;
+    width: 70%;
+    text-align: center; }
+    footer .footer-nav li {
+      display: inline;
+      padding: 20px 10px; }
+      footer .footer-nav li a {
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        font-family: 'Vollkorn'; }
+  footer img {
+    float: left;
+    width: 15%;
+    height: auto;
+    min-width: 200px; }
+  footer .copyright {
+    float: left;
+    width: 30%;
+    font-size: 14px;
+    font-family: 'Vollkorn';
+    margin-top: 50px; }

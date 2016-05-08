@@ -377,3 +377,26 @@ ul#scene {
     }
 }
 
+@media screen and (max-width: 700px) {
+    
+    section.slide {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        top: 0;
+        left: 0;
+        
+        #scene {
+            display: none;
+        }
+        
+        a.next-slide {
+            left: 60%;
+        }
+        
+        a.previous-slide {
+            right: 60%;
+        }
+    }
+}
+

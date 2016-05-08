@@ -1,4 +1,5 @@
 var currentSlide = {};
+var nextSlide;
 
 var background = $('.background'),
     middlebg = $('.middlebackground'),
@@ -90,22 +91,7 @@ function currentCheck() {
 };
 
 function fadeOut() {
-    var nextSlide = $('.current').next();
-    var tl = new TimelineLite();
-    tl.to(currentSlide.foreground.el, currentSlide.foreground.fadeSpeed, {opacity: 0})
-        .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 0}, '-=1.25')
-        .to(currentSlide.middleforeground.el, currentSlide.middleforeground.fadeSpeed, {opacity: 0}, '-=1')
-        .to(currentSlide.middleground.el, currentSlide.middleground.fadeSpeed, {opacity: 0}, '-=0.75')
-        .to(currentSlide.middlebackground.el, currentSlide.middlebackground.fadeSpeed, {opacity: 0}, '-=0.5')
-        .to(currentSlide.background.el, currentSlide.background.fadeSpeed, {opacity: 0}, '-=0.25')
-        .to(currentSlide.el, 0.1, {className: "-=current"})
-        .to(nextSlide, 0.1, {className: "+=current"});
-        
-    TweenMax.delayedCall(3, fadeInNext);
-}
-
-function fadeOutToPrevious() {
-    var nextSlide = $('.current').prev();
+    
     var tl = new TimelineLite();
     tl.to(currentSlide.foreground.el, currentSlide.foreground.fadeSpeed, {opacity: 0})
         .to(currentSlide.text.el, currentSlide.text.fadeSpeed, {opacity: 0}, '-=1.25')
@@ -133,9 +119,11 @@ function fadeInNext() {
 }
 
 $('.next-slide').on('click', function() {
+    nextSlide = $('.current').next();
     fadeOut();
 })
 
 $('.previous-slide').on('click', function() {
-    fadeOutToPrevious();
+    nextSlide = $('.current').prev();
+    fadeOut();
 })
