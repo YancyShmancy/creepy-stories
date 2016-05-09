@@ -47,53 +47,22 @@ $(function() {
 
 			var ignore = false;
 
-			$('a.next-slide').on('click', function(){
-
-				// Notify other clients that we have navigated to a new slide
-				// by sending the "slide-changed" message to socket.io
-
-				if(ignore){
-					return;
-				}
-
-				newSlide = $('.current').next();
-
-				socket.emit('slide-changed', {
-					newSlide: newSlide,
-					key: key
-				});
-			});
-            
-            $('a.previous-slide').on('click', function(){
-
-				// Notify other clients that we have navigated to a new slide
-				// by sending the "slide-changed" message to socket.io
-
-				if(ignore){
-					return;
-				}
-
-				newSlide = $('.current').prev();
-
-				socket.emit('slide-changed', {
-					newSlide: newSlide,
-					key: key
-				});
-			});
-
 			socket.on('navigate', function(data){
 	
 				// Another device has changed its slide. Change it in this browser, too:
 
-				nextSlide = data.newSlide;
-                fadeOut();
+				if (data.newSlide == "previous") {
+                    nextSlide = $('.current').prev();
+                } else if (data.newSlide == "next") {
+                    nextSlide = $('.current').next();
+                }
+                fadeOut(nextSlide);
 
 				ignore = true;
 
 				setInterval(function () {
 					ignore = false;
 				},100);
-
 			});
 
 		}

@@ -1,5 +1,6 @@
 @import "partials/variables";
 @import "partials/slides";
+@import "partials/controller";
 
 body,
 html {
@@ -63,6 +64,10 @@ header {
             height: 44px;
         }
     }
+}
+
+h1 {
+    font-family: 'Milonga';
 }
 
 #hero {
@@ -195,5 +200,7 @@ footer {
         margin-top: 50px;
     }
 }
+
+
 
 

@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Milonga|Montserrat|Vollkorn' rel='stylesheet' type='text/css'>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- endinject -->
+  </head>
+  <body class="controller">
+    <script>
+      $(document).ready(function(){
+            
+            var blurredElements = $('.slide.current').addClass('blur');
+            var socket = io.connect();
+            var form = $('form.login'),
+                secretTextBox = form.find('input[type=text]');
+
+            var key = "", animationTimeout;
+
+
+            // When the page is loaded it asks you for a key and sends it to the server
+
+            form.submit(function(e){
+
+                e.preventDefault();
+
+                key = secretTextBox.val().trim();
+
+                // If there is a key, send it to the server-side
+                // through the socket.io channel with a 'load' event.
+
+                if(key.length) {
+                    socket.emit('load', {
+                        key: key
+                    });
+                }
+
+            });
+          
+            socket.on('access', function(data){
+
+            // Check if we have "granted" access.
+            // If we do, we can continue with the presentation.
+
+                if(data.access === "granted") {
+
+                    // Unblur everything
+                    blurredElements.removeClass('blurred');
+
+                    form.hide();
+
+                    var ignore = false;
+
+                    $('a.next-slide').on('click', function(){
+
+                        // Notify other clients that we have navigated to a new slide
+                        // by sending the "slide-changed" message to socket.io
+
+                        if(ignore){
+                            return;
+                        }
+
+                        newSlide = "next";
+
+                        socket.emit('slide-changed', {
+                            newSlide: newSlide,
+                            key: key
+                        });
+                    });
+
+                    $('a.previous-slide').on('click', function(){
+
+                        // Notify other clients that we have navigated to a new slide
+                        // by sending the "slide-changed" message to socket.io
+
+                        if(ignore){
+                            return;
+                        }
+
+                        newSlide = "previous";
+
+                        socket.emit('slide-changed', {
+                            newSlide: newSlide,
+                            key: key
+                        });
+                    });
+                };
+            });
+      });
+    </script>
+    
+    <img src="./assets/img/scene1/trees/tree1-color.png" alt="">
+    <img src="./assets/img/scene1/trees/tree1-line.png" alt="">
+    
+    <form class="login">
+        <span>What's your secret key?</span>
+        <input type="text" placeholder="Please enter your secret key!"/>
+        <input type="submit" value="➡" />
+    </form>
+    
+    <h1 class="controller-header">Control Your Story</h1>
+    <h2>Hansel &amp; Gretel</h2>
+    <a href="#" class="previous-slide"><</a>
+    <a href="#" class="next-slide">></a>
+  </body>
+</html>
