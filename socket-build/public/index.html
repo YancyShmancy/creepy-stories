@@ -18,8 +18,21 @@
             <input type="submit" value="➡" />
         </form>
         
+        <div class="dog-ear">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Choose Your Narrator</a></li>
+                <li><a href="#">Parental Controls</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="pageflip">
+                <span>Menu</span>
+            </div>
+        </div>
+        
         <section class="slide current" id="one" current-story="hanselAndGretel" current-page="page1">
-           
+            
             <ul id="scene">
                 
                 <li class="layer background" data-depth="0.00">
@@ -159,8 +172,11 @@
                     <img src="./assets/img/scene4/fire/stove-color.png" alt="" class="stove color">
                     <img src="./assets/img/scene4/fire/stove-line.png" alt="" class="stove line">
                     
-                    <img src="./assets/img/scene4/people/witch-color.png" class="witch color" alt="">
-                    <img src="./assets/img/scene4/people/witch-line.png" alt="" class="witch">
+                    <img src="./assets/img/scene4/people/witch-color.png" class="witch color shown" alt="">
+                    <img src="./assets/img/scene4/people/witch-line.png" alt="" class="witch shown">
+                    
+                    <img src="./assets/img/scene4/people/witch-burning-color.png" class="witch burning color" alt="">
+                    <img src="./assets/img/scene4/people/witch-burning.png" class="witch burning" alt="">
                     
                     <img src="./assets/img/scene4/people/gretel-color.png" class="gretel color" alt="">
                     <img src="./assets/img/scene4/people/gretel-line.png" class="gretel" alt="">
@@ -170,10 +186,13 @@
                         "Silly goose," said the old woman, "the door is big enough. Just look, I can get in myself." And she crept up and thrust her head into the oven.<br>
                         <span>Then Gretel gave her a push that drove her far into it, and shut the iron door, and fastened the bolt.</span>
                     </p>
+                    
+                    
                 </li>
                 <li class="layer foreground" data-depth="0.00"><img src="" alt="">
                     <img src="./assets/img/scene1/trees/tree1-color.png" alt="" class="tree1 left">
                     <img src="./assets/img/scene1/trees/tree1-line.png" alt="" class="tree1 left">
+                    <a href="#" class="push">Push the Witch</a>
                 </li>
             </ul>
 
@@ -182,11 +201,12 @@
         
     </div>
     
-    
+    <script src="./modules/gsap/src/minified/TweenLite.min.js"></script>
     <!-- inject:js -->
     <script src="assets/js/vendor/vendor.js"></script>
     <script src="assets/js/app/app.js"></script>
     <!-- endinject -->
+    
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>

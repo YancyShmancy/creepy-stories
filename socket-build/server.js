@@ -1,7 +1,7 @@
 
 // Creating an express server
 
-var express = require('./public/node_modules/express/index'),
+var express = require('./public/modules/express/index'),
 	app = express();
 
 var port = process.env.PORT || 8080;

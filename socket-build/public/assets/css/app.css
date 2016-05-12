@@ -234,7 +234,7 @@ ul#scene {
   top: 70px;
   left: 50%;
   margin-left: -200px;
-  z-idex: 99999999; }
+  z-index: 99999999; }
 
 #four ul .stove {
   height: 40%;
@@ -248,7 +248,8 @@ ul#scene {
 #four ul .witch {
   height: 35%;
   top: 350px;
-  left: 400px; }
+  left: 400px;
+    opacity: 0;}
   #four ul .witch.color {
     height: 20%;
     top: 430px;
@@ -319,6 +320,11 @@ body.controller {
     z-index: 9999999;
     background-color: rgba(255, 255, 255, 0.5); }
 
+body.controller a.next-slide,
+body.controller a.previous-slide {
+    z-index: 999999;
+}
+
 .blurred {
   -webkit-filter: blur(20px); }
 
@@ -384,7 +390,7 @@ form.login input[type=submit] {
   font-weight: bold;
   border: none;
   border-radius: 2px;
-  background-color: rgba(90, 147, 187, 0.69);
+  background-color: rgba(252, 145, 119, 0.8);
   color: #fff; }
 
 @-webkit-keyframes shakeMe {
@@ -608,3 +614,117 @@ footer {
     font-size: 14px;
     font-family: 'Vollkorn';
     margin-top: 50px; }
+
+div.dog-ear {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    background-image: linear-gradient(to right bottom, #fdfbee 42%, #F9991C 43%);
+    z-index: 999999999;
+    text-decoration: none;
+}
+    
+    div.dog-ear span {
+        position: absolute;
+        font-size: 1em;
+        font-family: 'Vollkorn';
+        text-transform: uppercase;
+        transform: rotate(-45deg);
+        bottom: 20px;
+        right: 5px;
+        color: white;
+        transition: 0.3s all;
+    }
+    
+    div.dog-ear ul {
+        padding: 0;
+        margin: 0;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        position: absolute;
+        background-image: linear-gradient(to right bottom, #fdfbee 50%,rgba(0,0,0,0) 51%);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: 0.3s all;
+    }
+        
+        div.dog-ear ul li {
+            display: block;
+            color: #fff;
+            text-align: left;
+            opacity: 0;
+            transition: 0.35s opacity;
+            font-size: 2em;
+            color: black;
+            padding: 10px 10px;
+        }
+            
+            div.dog-ear ul li a {
+                display: block;
+                text-decoration: none;
+                color: #fc9177;
+            }
+  
+    div.dog-ear.flipped .pageflip {
+        width: 500px;
+        height: 500px;
+        box-shadow: -5px -5px 40px rgba(0,0,0,1);
+    }
+        div.dog-ear.flipped .pageflip span {
+            font-size: 1.5em;
+        }
+    
+
+    div.dog-ear.flipped ul {
+        height: 500px;
+        width: 500px;
+        z-index: 99999999;
+    }
+        div.dog-ear.flipped ul li {
+            opacity: 1;
+        }
+        div.dog-ear.flipped ul li a:hover {
+            color: gray;
+        }
+
+.pageflip {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url('');
+  background-size: 100%;
+  background-image: linear-gradient(to right bottom,rgba(0,0,0,0) 49%, #e4c856 51%);
+  transition: all 0.3s;
+}
+
+a.push {
+    z-index: 99999999;
+    position: absolute;
+    top: 340px;
+    left: 125px;
+    font-family: 'Vollkorn';
+    font-size: 2em;
+    color: black;
+}
+
+#four ul li .witch.shown {
+    opacity: 1;
+}
+
+#four ul li .witch.visible {
+    opacity: 1;
+}
+
+#four ul li .witch.burning.color {
+    left: 400px;
+}
