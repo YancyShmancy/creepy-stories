@@ -1,0 +1,92 @@
+div.dog-ear {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    background-image: linear-gradient(to right bottom, lightgray 42%, #F9991C 43%);
+    z-index: 999999999;
+    text-decoration: none;
+    
+    span {
+        position: absolute;
+        font-size: 1em;
+        font-family: 'Vollkorn';
+        text-transform: uppercase;
+        transform: rotate(-45deg);
+        bottom: 20px;
+        right: 5px;
+        color: white;
+        transition: 0.3s all;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        position: absolute;
+        background-image: linear-gradient(to right bottom, lightgray 50%,rgba(0,0,0,0) 51%);
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: 0.3s all;
+        
+        
+        li {
+            display: block;
+            color: #fff;
+            text-align: left;
+            opacity: 0;
+            transition: 0.3s opacity;
+            font-size: 2em;
+            color: black;
+            padding: 10px 0;
+            
+            a {
+                display: block;
+            }
+        }
+    }
+  
+    &.flipped .pageflip {
+        width: 500px;
+        height: 500px;
+        box-shadow: -5px -5px 40px rgba(0,0,0,1);
+        
+        span {
+            font-size: 1.5em;
+        }
+    }
+
+    &.flipped ul {
+        height: 500px;
+        width: 500px;
+        z-index: 99999999;
+        
+        li {
+            opacity: 1;
+            
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+}
+
+.pageflip {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background-image: url('');
+  background-size: 100%;
+  background-image: linear-gradient(to right bottom,rgba(0,0,0,0) 49%, gray 2%, #F9991C 50%);
+  transition: all 0.3s;
+}

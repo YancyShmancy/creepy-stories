@@ -127,3 +127,7 @@ $('.previous-slide').on('click', function() {
     nextSlide = $('.current').prev();
     fadeOut(nextSlide);
 })
+
+$('.dog-ear').on('click', function() {
+    $(this).toggleClass('flipped');
+})
